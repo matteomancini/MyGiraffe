@@ -26,11 +26,6 @@
       "to": "d73b25ee-72a9-4031-a18c-30397b7c127a"
     },
     {
-      "id": "3935e85f-3e46-40be-967d-56833b2f788f",
-      "from": "81f00817-065a-4956-8ac7-11da4dd14c4e",
-      "to": "d0e86406-5a76-46de-8bd5-eb2d378a51e4"
-    },
-    {
       "id": "ded495aa-371b-40e0-b597-d84e0befb7e8",
       "from": "4324142f-43d8-4105-8c52-b1cfd610aa7c",
       "to": "c4a887b2-68dc-4ffa-b54b-e5a3524d2855"
@@ -49,6 +44,16 @@
       "id": "a51b7740-dc02-4045-8989-4cca0c329f3b",
       "from": "7bcee437-f660-47bf-ab39-39aa7e4222fe",
       "to": "f8a4ada4-c60a-4554-b68b-f968ed834d50"
+    },
+    {
+      "id": "02d8db04-c11d-46e6-a1f7-63b72df7b5dd",
+      "from": "81f00817-065a-4956-8ac7-11da4dd14c4e",
+      "to": "3bb94377-f224-4c90-b401-fb7b0e89bd5f"
+    },
+    {
+      "id": "dc793d1f-3fea-439e-bcc1-db281083707e",
+      "from": "81f00817-065a-4956-8ac7-11da4dd14c4e",
+      "to": "d0e86406-5a76-46de-8bd5-eb2d378a51e4"
     }
   ],
   "nodes": [
@@ -802,8 +807,8 @@
         }
       ],
       "position": [
-        978.4898948669434,
-        306.3213806152344
+        1014.4757347106934,
+        179.51434326171875
       ],
       "code": [
         {
@@ -993,7 +998,7 @@
           "name": "out_file",
           "output": false,
           "outputPort": false,
-          "value": "",
+          "value": "'dwi_unbiased.mif'",
           "visible": false,
           "iterator": false
         },
@@ -1337,7 +1342,7 @@
           "name": "gm_file",
           "output": false,
           "outputPort": false,
-          "value": "",
+          "value": "'gm.txt'",
           "visible": false,
           "iterator": false
         },
@@ -1358,7 +1363,7 @@
           "name": "csf_file",
           "output": false,
           "outputPort": false,
-          "value": "",
+          "value": "'csf.txt'",
           "visible": false,
           "iterator": false
         },
@@ -1400,7 +1405,7 @@
           "name": "max_sh",
           "output": false,
           "outputPort": false,
-          "value": "",
+          "value": "(8,8,8)",
           "visible": false,
           "iterator": false
         },
@@ -1891,7 +1896,7 @@
           "name": "max_sh",
           "output": false,
           "outputPort": false,
-          "value": "",
+          "value": "Undefined",
           "visible": false,
           "iterator": false
         },

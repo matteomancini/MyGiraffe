@@ -22,14 +22,19 @@ mrtrix3_brain_mask = pe.Node(interface = mrtrix3.BrainMask(), name='mrtrix3_brai
 
 #Wraps the executable command ``dwibiascorrect``.
 mrtrix3_dwibias_correct = pe.Node(interface = mrtrix3.DWIBiasCorrect(), name='mrtrix3_dwibias_correct')
+mrtrix3_dwibias_correct.inputs.out_file = 'dwi_unbiased.mif'
 
 #Wraps the executable command ``dwi2response``.
 mrtrix3_response_sd = pe.Node(interface = mrtrix3.ResponseSD(), name='mrtrix3_response_sd')
 mrtrix3_response_sd.inputs.algorithm = 'dhollander'
+mrtrix3_response_sd.inputs.gm_file = 'gm.txt'
+mrtrix3_response_sd.inputs.csf_file = 'csf.txt'
+mrtrix3_response_sd.inputs.max_sh = (8,8,8)
 
 #Wraps the executable command ``dwi2fod``.
 mrtrix3_estimate_fod = pe.Node(interface = mrtrix3.EstimateFOD(), name='mrtrix3_estimate_fod')
 mrtrix3_estimate_fod.inputs.algorithm = 'msmt_csd'
+mrtrix3_estimate_fod.inputs.max_sh = Undefined
 
 #Generic datasink module to store structured outputs
 io_data_sink = pe.Node(interface = io.DataSink(), name='io_data_sink')
@@ -42,11 +47,12 @@ analysisflow.connect(mrtrix3_mrconvert, "out_file", mrtrix3_dwibias_correct, "in
 analysisflow.connect(mrtrix3_dwibias_correct, "out_file", mrtrix3_brain_mask, "in_file")
 analysisflow.connect(mrtrix3_dwibias_correct, "out_file", mrtrix3_response_sd, "in_file")
 analysisflow.connect(mrtrix3_response_sd, "wm_file", mrtrix3_estimate_fod, "wm_txt")
-analysisflow.connect(mrtrix3_brain_mask, "out_file", mrtrix3_estimate_fod, "mask_file")
 analysisflow.connect(mrtrix3_response_sd, "csf_file", mrtrix3_estimate_fod, "csf_txt")
 analysisflow.connect(mrtrix3_response_sd, "gm_file", mrtrix3_estimate_fod, "gm_txt")
 analysisflow.connect(mrtrix3_dwibias_correct, "out_file", mrtrix3_estimate_fod, "in_file")
 analysisflow.connect(mrtrix3_estimate_fod, "wm_odf", io_data_sink, "odf")
+analysisflow.connect(mrtrix3_brain_mask, "out_file", mrtrix3_response_sd, "in_mask")
+analysisflow.connect(mrtrix3_brain_mask, "out_file", mrtrix3_estimate_fod, "mask_file")
 
 #Run the workflow
 plugin = 'MultiProc' #adjust your desired plugin here
