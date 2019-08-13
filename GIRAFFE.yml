@@ -1,7 +1,5 @@
 # list of tools
 tools:
   porcupine:
-    files:
-      - GIRAFFE/porcupipeline.pork
     nodes:
-      - https://raw.githubusercontent.com/TimVanMourik/keras/giraffe-tools/keras_nodes.json
+      - toolboxes.json
