@@ -9,6 +9,3 @@ tools:
       - https://raw.githubusercontent.com/TimVanMourik/keras/giraffe-tools/keras_nodes.json
     # You can load your own JavaScript code generator. Documentation will follow soon
     # The path is either relative to the root or a full URL grammars:
-      - language: TvM
-        script: GIRAFFE/test.js
-        format: matlab
