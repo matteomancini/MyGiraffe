@@ -2,11 +2,7 @@
 tools:
   porcupine:
     file:
-    # A file in your repository to which the UI state is saved
-    # Currently only a single file is supported files:
-      - GIRAFFE/keras.pork
-    # A list of nodes to load into the editor
-    # The path is either relative to the root or a full URL nodes:
-      - https://raw.githubusercontent.com/TimVanMourik/keras/giraffe-tools/keras_nodes.json
-    # You can load your own JavaScript code generator. Documentation will follow soon
-    # The path is either relative to the root or a full URL grammars:
+      - GIRAFFE/porcupine_pipeline.pork
+  armadillo:
+    neurovault:
+      - 31997
