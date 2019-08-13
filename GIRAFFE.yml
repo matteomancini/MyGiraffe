@@ -2,4 +2,4 @@
 tools:
   porcupine:
     nodes:
-      - toolboxes.json
+      - GIRAFFE/toolboxes.json
