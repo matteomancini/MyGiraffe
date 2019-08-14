@@ -3,3 +3,6 @@ tools:
   porcupine:
     nodes:
       - toolboxes.json
+    files:
+      - GIRAFFE/mypipeline.pork
+
